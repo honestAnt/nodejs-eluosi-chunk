@@ -1,0 +1,31 @@
+{
+  "name": "node-game-tetris",
+  "version": "1.0.0",
+  "description": "一个使用纯 JavaScript 开发的经典俄罗斯方块游戏",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "tetris",
+    "game",
+    "javascript",
+    "html5",
+    "canvas"
+  ],
+  "author": "Qoder AI",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/node-game-eluoshi"
+  },
+  "homepage": "http://localhost:3000"
+}
