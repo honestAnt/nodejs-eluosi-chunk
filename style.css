@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.game-board h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-area {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+#tetris {
+    border: 3px solid #fff;
+    border-radius: 10px;
+    background: #000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 200px;
+}
+
+.score-panel, .level-panel, .lines-panel, .next-panel, .controls-panel {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.score-panel h3, .level-panel h3, .lines-panel h3, .next-panel h3, .controls-panel h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+#score, #level, #lines {
+    font-size: 2em;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#next {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: #000;
+    margin: 0 auto;
+    display: block;
+}
+
+.controls {
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.controls p {
+    margin: 5px 0;
+    padding: 2px 0;
+}
+
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.game-controls button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.game-controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.game-controls button:active {
+    transform: translateY(0);
+}
+
+.game-controls button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #fff;
+    z-index: 1000;
+}
+
+.game-over h2 {
+    color: #FF6B6B;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.game-over p {
+    margin-bottom: 30px;
+    font-size: 1.3em;
+}
+
+.game-over button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #4ECDC4, #44A08D);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-over button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .game-info {
+        min-width: 300px;
+    }
+    
+    .game-board h1 {
+        font-size: 2em;
+    }
+    
+    #tetris {
+        width: 280px;
+        height: 560px;
+    }
+}
+
+@keyframes blockDrop {
+    0% { transform: translateY(-10px); opacity: 0.8; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.block-animation {
+    animation: blockDrop 0.1s ease-out;
+}
